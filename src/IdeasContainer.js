@@ -8,7 +8,8 @@ class IdeasContainer extends Component {
 
     state = {
         ideas: [],
-        editingIdeaId: null
+        editingIdeaId: null,
+        notification: ''
     }
 
     render() {
@@ -18,11 +19,16 @@ class IdeasContainer extends Component {
                 <button className="newIdeaButton"
                         onClick={this.addNewIdea} >
                     New Idea
-                </button><br/>
+                </button>
+                <span className="notification">
+                  {this.state.notification}
+                </span><br/>
                 {this.state.ideas.map((idea) => {
                     if(this.state.editingIdeaId === idea.id) {
                         return(<IdeaForm idea={idea} key={idea.id}
-                                         updateIdea={this.updateIdea} />)
+                                         updateIdea={this.updateIdea}
+                                         resetNotification={this.resetNotification} />
+                        )
                     } else {
                         return (<Idea idea={idea} key={idea.id} />)
                     }
@@ -66,7 +72,14 @@ class IdeasContainer extends Component {
         const ideas = update(this.state.ideas, {
             [ideaIndex]: { $set: idea }
         })
-        this.setState({ideas: ideas})
+        this.setState({
+            ideas: ideas,
+            notification: 'All changes saved'
+        })
+    }
+
+    resetNotification = () => {
+        this.setState({notification: ''})
     }
 }
 
