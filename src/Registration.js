@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { Redirect } from 'react-router-dom'
+// import { Redirect } from 'react-router-dom'
 
 class Registration extends Component {
 
     state = {
-        toIdeas: false,
+        // toIdeas: false,
         notification: ''
     }
 
     render() {
-        if (this.state.toIdeas) return <Redirect to='/ideas' />
+        // if (this.state.toIdeas) return <Redirect to='/ideas' />
         return (
             <div>
                 <h1>Registration</h1>
@@ -46,11 +46,11 @@ class Registration extends Component {
                 password: document.getElementById('user_password').value
             }
         )
-            // .then(response => {
-            //     localStorage.setItem('jwt', response.data.auth_token)
-            //     })
-            
-            // .then(() => this.props.history.push('/ideas'))
+            .then(response => {
+                localStorage.setItem('jwt', response.data.auth_token)
+                })
+
+            .then(() => this.props.history.push('/ideas'))
             .then(() => this.setState(() => ({
                 toIdeas: true
             })))

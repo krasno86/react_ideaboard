@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { Redirect } from 'react-router-dom'
+// import { Redirect } from 'react-router-dom'
 
 axios.defaults.headers.common['Content-Type'] = 'application/json';
 axios.interceptors.request.use(function (config) {
@@ -39,12 +39,12 @@ axios.interceptors.response.use(function (response) {
 class Login extends Component {
 
     state = {
-        toIdeas: false,
+        // toIdeas: false,
         notification: ''
     }
 
     render() {
-        if (this.state.toIdeas) return <Redirect to='/ideas' />
+        // if (this.state.toIdeas) return <Redirect to='/ideas' />
         return (
             <div>
                 <h1>Login</h1>
@@ -83,10 +83,10 @@ class Login extends Component {
                 // localStorage.setItem('client', response.headers['client'])
                 // localStorage.setItem('uid', response.headers['uid'])
             })
-            // .then(() => this.props.history.push('/ideas'))
-            .then(() => this.setState(() => ({
-                toIdeas: true
-            })))
+            .then(() => this.props.history.push('/ideas'))
+            // .then(() => this.setState(() => ({
+            //     toIdeas: true
+            // })))
             .catch(error => console.log(error))
     }
 
