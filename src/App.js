@@ -5,7 +5,7 @@ import ContactsList from './ContactsList'
 import Registration from './Registration'
 import Login from './Login'
 import IdeasContainer from './IdeasContainer'
-import { HashRouter, BrowserRouter, Route, Link, NavLink } from 'react-router-dom'
+import { BrowserRouter, Route, NavLink } from 'react-router-dom'
 
 class App extends Component {
     render() {
