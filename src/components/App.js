@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import './style.css'
+import './ideas.css'
 import Hello from './Hello'
 import ContactsList from './ContactsList'
 import Registration from './Registration'
 import Login from './Login'
+import ReactDatePicker from './ReactDatePicker'
 import IdeasContainer from './IdeasContainer'
 import { BrowserRouter, Route, NavLink } from 'react-router-dom'
 
@@ -15,6 +16,7 @@ class App extends Component {
                     <div>
                         <h2>Main menu</h2>
                         <div><NavLink activeStyle = {{color: 'red'}} to='/home'>HOME</NavLink></div>
+                        <div><NavLink activeStyle = {{color: 'red'}} to='/datepicker'>datepicker</NavLink></div>
                         <div><NavLink activeStyle = {{color: 'red'}} to='/registration'>registration</NavLink></div>
                         <div><NavLink activeStyle = {{color: 'red'}} to='/login'>log in</NavLink></div>
                         <div><NavLink activeStyle = {{color: 'red'}} to='/hello'>hello</NavLink></div>
@@ -23,6 +25,7 @@ class App extends Component {
                     </div>
                     <div className="root">
                         <Route path = '/hello' component = {Hello}/>
+                        <Route path = '/datepicker' component = {ReactDatePicker}/>
                         <Route path = '/contacts' component = {ContactsList}/>
                         <Route path = '/ideas' component = {IdeasContainer}/>
                         <Route path = '/registration' component = {Registration}/>

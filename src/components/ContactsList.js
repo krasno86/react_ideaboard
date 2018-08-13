@@ -1,7 +1,7 @@
 import React from "react";
 import Contact from './Contact'
-import contacts from './fixtures'
-import './style.css'
+import contacts from '../contacts'
+import './ideas.css'
 
 class ContactsList extends React.Component {
     state = {
