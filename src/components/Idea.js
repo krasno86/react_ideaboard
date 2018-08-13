@@ -1,6 +1,16 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 class Idea extends Component {
+    static propTypes = {
+        idea: PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            title: PropTypes.string.isRequired,
+            body: PropTypes.string.isRequired,
+        }).isRequired,
+        handleDelete: PropTypes.func,
+        handleClick: PropTypes.func
+    }
 
     handleClick = () => {
         this.props.onClick(this.props.idea.id)
