@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 class Idea extends Component {
     static propTypes = {
         idea: PropTypes.shape({
-            id: PropTypes.string.isRequired,
+            id: PropTypes.number.isRequired,
             title: PropTypes.string.isRequired,
             body: PropTypes.string.isRequired,
         }).isRequired,
