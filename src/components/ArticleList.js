@@ -1,9 +1,9 @@
 import React from 'react'
 import Article from './Article/index'
-import PropTypes from "prop-types"
+import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 // import { NavLink } from 'react-router-dom'
-import {loadAllArticles} from '../AC/index'
+// import {loadAllArticles} from '../AC/index'
 
 class ArticleList extends React.Component {
     static propTypes = {
@@ -11,20 +11,25 @@ class ArticleList extends React.Component {
         articles: PropTypes.array.isRequired
     }
 
-    componentDidMount(){
-        this.props.loadAllArticles()
-    }
+    // componentDidMount(){
+    //     this.props.loadAllArticles()
+    // }
 
 	render() {
-        const { articles } = this.props
-        const articleElements = articles.map(article => <li key = {article.id}>
-            <Article article = {article}/>
-        </li>
+        const articles = this.props.articles
+        const articleElements = articles.map(article =>
+            <li key = {article.id}>
+                <Article article = {article}/>
+            </li>
         )
         return  <ul>{articleElements}</ul>
     }
 }
 
+// export default connect((state) => {
+//     return { articles: state.articles }
+// }, {loadAllArticles})
+
 export default connect((state) => {
     return { articles: state.articles }
-}, {loadAllArticles})
+})(ArticleList)
