@@ -4,25 +4,37 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 // import { NavLink } from 'react-router-dom'
 import {loadAllArticles} from '../AC'
+import {filtrateArticlesSelector} from '../selectors'
 
 class ArticleList extends React.Component {
+
+    constructor(props) {
+        super(props);
+        // Don't call this.setState() here!
+        this.props.loadAllArticles()
+        console.log('CONSTRUCTOR--------------------------')
+    }
     static propTypes = {
+
         //from connect
-        // articles: PropTypes.array.isRequired
+        articles: PropTypes.array.isRequired
     }
 
     componentDidMount(){
-        this.props.loadAllArticles()
+        console.log('componentDidMount--------------------------')
+        // this.props.loadAllArticles()
     }
 
 	render() {
         // console.log('========= Update articleList', this.props.articles.typeof())
         // console.log('========= Update articleList', this.props.articles.lengh())
-        console.log('========= Update articleList', this.props)
-        console.log('========= Update articleList', this.props.articles)
-        console.log('========= Update articleList', this.props.articles.length)
+        console.log('========= RENDER    Update articleList', this.props.articles)
+        // console.log('========= Update articleList', this.props.articles)
+        // console.log('========= Update articleList', this.props.articles.length)
 
-        const {articles} = this.props
+        let {articles} = this.props
+        console.log('articles.length === 0: ', articles)
+        articles = typeof articles === 'Object' ? [] : articles;
         // const articles = this.props.articles
         console.log('+++++++++++++', articles)
 
@@ -37,7 +49,9 @@ class ArticleList extends React.Component {
 }
 
 export default connect(state => {
+    console.log('-----------  connect', state)
     return { articles: state.articles }
+    // return { articles: filtrateArticlesSelector(state) }
 }, {loadAllArticles})(ArticleList)
 
 // export default connect((state) => {

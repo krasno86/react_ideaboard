@@ -1,5 +1,6 @@
 import {arrToMap} from '../helpers'
 import {LOAD_ALL_ARTICLES} from '../constants'
+import axios from "axios/index";
 // import {normalizedArticles} from '../fixtures'
 
 export default (articleState = {}, action) => {
