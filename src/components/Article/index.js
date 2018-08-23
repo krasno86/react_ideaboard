@@ -7,7 +7,7 @@ class Index extends Component {
 	static propTypes = {
 	 	//from connect
 		article: PropTypes.shape({
-			 id: PropTypes.string.isRequired,
+			 id: PropTypes.number.isRequired,
 			 title: PropTypes.string.isRequired,
 			 text: PropTypes.string.isRequired
 		 }).isRequired
