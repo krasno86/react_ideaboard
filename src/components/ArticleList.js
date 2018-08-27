@@ -9,7 +9,7 @@ class ArticleList extends React.Component {
 
     static propTypes = {
         //from connect
-        articles: PropTypes.array.isRequired
+        // articles: PropTypes.array.isRequired
     }
 
     componentDidMount(){
@@ -18,7 +18,8 @@ class ArticleList extends React.Component {
 
 	render() {
         let {articles} = this.props
-        const articleElements = articles.map(article => <li key = {article.id}>
+        // const articleElements = articles.forEach(( article, key, map ) => <li key = {article.id}>
+        let articleElements = articles.map(article => <li key = {article.id}>
                 <Article article = {article}/>
             </li>
         )

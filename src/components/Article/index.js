@@ -5,7 +5,7 @@ import '../Article/style.css'
 
 class Index extends Component {
 	static propTypes = {
-	 	//from connect
+	 	// from connect
 		article: PropTypes.shape({
 			 id: PropTypes.number.isRequired,
 			 title: PropTypes.string.isRequired,
