@@ -12,7 +12,7 @@ class Counter extends React.Component {
         return (
             <div className='Hello'>
                 <h2>{this.props.counter}</h2>
-                <button onClick = {this.handleIncrement}>Increment counter</button>
+                <button className='btn btn-primary' onClick = {this.handleIncrement}>Increment counter</button>
             </div>
         )
     }

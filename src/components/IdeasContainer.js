@@ -16,7 +16,7 @@ class IdeasContainer extends Component {
         return (
             <div>
                 <h1>Ideas</h1>
-                <button className="newIdeaButton"
+                <button className="btn btn-success newIdeaButton"
                         onClick={this.addNewIdea} >
                     New Idea
                 </button>

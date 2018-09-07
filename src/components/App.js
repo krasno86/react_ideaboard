@@ -19,22 +19,17 @@ class App extends Component {
             <Provider store = {store}>
                 <BrowserRouter>
                     <div>
-                        <div className="header">
-                            <div className="container">
-                                <nav className="navbar navbar-light">
-                                    <h2>Main menu</h2>
-                                    {/*<div><NavLink activeStyle = {{color: 'red'}} to='/home'>HOME</NavLink></div>*/}
-                                    <div><NavLink activeStyle = {{color: 'red'}} to='/datepicker'>datepicker</NavLink></div>
-                                    <div><NavLink activeStyle = {{color: 'red'}} to='/registration'>registration</NavLink></div>
-                                    <div><NavLink activeStyle = {{color: 'red'}} to='/login'>log in</NavLink></div>
-                                    <div><NavLink activeStyle = {{color: 'red'}} to='/hello'>hello</NavLink></div>
-                                    <div><NavLink activeStyle = {{color: 'red'}} to='/articles'>article list</NavLink></div>
-                                    <div><NavLink activeStyle = {{color: 'red'}} to='/counter'>Counter</NavLink></div>
-                                    <div><NavLink activeStyle = {{color: 'red'}} to='/contacts'>contacts</NavLink></div>
-                                    <div><NavLink activeStyle = {{color: 'red'}} to='/ideas'>ideas</NavLink></div>
-                                </nav>
-                            </div>
-                        </div>
+                        <ul class="topnav">
+                            <li><NavLink activeStyle = {{color: 'red'}} to='/home'>Home</NavLink></li>
+                            <li><NavLink activeStyle = {{color: 'red'}} to='/datepicker'>datepicker</NavLink></li>
+                            <li><NavLink activeStyle = {{color: 'red'}} to='/registration'>registration</NavLink></li>
+                            <li><NavLink activeStyle = {{color: 'red'}} to='/login'>log in</NavLink></li>
+                            <li><NavLink activeStyle = {{color: 'red'}} to='/hello'>hello</NavLink></li>
+                            <li><NavLink activeStyle = {{color: 'red'}} to='/articles'>article list</NavLink></li>
+                            <li><NavLink activeStyle = {{color: 'red'}} to='/counter'>counter</NavLink></li>
+                            <li><NavLink activeStyle = {{color: 'red'}} to='/contacts'>contacts</NavLink></li>
+                            <li><NavLink activeStyle = {{color: 'red'}} to='/ideas'>ideas</NavLink></li>
+                        </ul>
                         <div className="root">
                             <div className="container">
                                 <Route path = '/hello' component = {Hello}/>
@@ -45,7 +40,6 @@ class App extends Component {
                                 <Route path = '/articles' component = {ArticleList}/>
                                 <Route path = '/registration' component = {Registration}/>
                                 <Route path = '/login' component = {Login}/>
-                                {/*<Route path = '/#' component = {App}/>*/}
                             </div>
                         </div>
                     </div>
